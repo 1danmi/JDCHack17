@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "527145594113",
+    "firebase_url": "https://chatwork-3464f.firebaseio.com",
+    "project_id": "chatwork-3464f",
+    "storage_bucket": "chatwork-3464f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527145594113:android:d0794c0bdf4ed6b8",
+        "android_client_info": {
+          "package_name": "a1221.org.il.chatwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527145594113-d5hgtf53l4lo6r166q576e38502qbjgh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "a1221.org.il.chatwork",
+            "certificate_hash": "9A94D3BFBEB5B9BC3BD28268D9BE29FF8156D8F7"
+          }
+        },
+        {
+          "client_id": "527145594113-q09cgdjitgiqprthcchp53kfcnreq80i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcRqWsqFVWFuOoFwTGQE_NEaEkBGZtj8Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527145594113-q09cgdjitgiqprthcchp53kfcnreq80i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
