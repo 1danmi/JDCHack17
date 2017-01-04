@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_bots"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="a1221.org.il.chatwork.BotsActivity">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/conversations_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@color/transparent"
+        android:clipToPadding="false"
+        android:divider="@null"
+        android:paddingBottom="8sp"
+        android:paddingTop="8sp"
+        android:scrollbarStyle="outsideOverlay" />
+</RelativeLayout>
