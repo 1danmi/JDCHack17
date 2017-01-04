@@ -1,4 +1,4 @@
-package a1221.org.il.chatwork;
+package a1221.org.il.chatwork.Activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -33,6 +33,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import a1221.org.il.chatwork.R;
 
 import static android.Manifest.permission.READ_CONTACTS;
 

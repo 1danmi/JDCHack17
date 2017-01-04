@@ -1,4 +1,4 @@
-package a1221.org.il.chatwork;
+package a1221.org.il.chatwork.Adapter;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,6 +12,10 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+
+import a1221.org.il.chatwork.Entities.Bot;
+import a1221.org.il.chatwork.R;
+import a1221.org.il.chatwork.Libraries.RoundBitmap;
 
 /**
  * Created by nadav on 1/4/2017.

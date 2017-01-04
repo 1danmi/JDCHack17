@@ -1,9 +1,8 @@
-package a1221.org.il.chatwork;
+package a1221.org.il.chatwork.Activities;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +10,10 @@ import android.support.v7.widget.RecyclerView;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Calendar;
+
+import a1221.org.il.chatwork.Adapter.MessageListAdapter;
+import a1221.org.il.chatwork.Entities.Bot;
+import a1221.org.il.chatwork.R;
 
 public class BotsActivity extends AppCompatActivity {
 

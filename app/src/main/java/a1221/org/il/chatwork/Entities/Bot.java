@@ -1,4 +1,4 @@
-package a1221.org.il.chatwork;
+package a1221.org.il.chatwork.Entities;
 
 import java.util.Calendar;
 

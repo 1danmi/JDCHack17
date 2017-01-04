@@ -1,4 +1,4 @@
-package a1221.org.il.chatwork;
+package a1221.org.il.chatwork.Entities;
 
 /**
  * Created by Daniel on 1/4/2017.
