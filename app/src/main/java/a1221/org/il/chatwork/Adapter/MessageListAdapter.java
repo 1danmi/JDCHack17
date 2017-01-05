@@ -93,17 +93,22 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
     @Override
     public void onBindViewHolder(final MessageViewHolder holder, int position) {
         final String txt = mDataset.get(position).getText();
-        if(!isGifUrl(txt))
-            holder.text.setText(txt);
-        else
-        {
+        if(isGifUrl(txt)) {
             holder.message_block.setVisibility(View.GONE);
             holder.footer.setVisibility(View.GONE);
             holder.gif.setVisibility(View.VISIBLE);
             Glide.with(context)
                     .load(txt)
                     .asGif()
+                    .placeholder(R.drawable.loading)
                     .into(holder.gif);
+        }
+        else
+        {
+            holder.message_block.setVisibility(View.VISIBLE);
+            holder.footer.setVisibility(View.VISIBLE);
+            holder.gif.setVisibility(View.GONE);
+            holder.text.setText(txt);
         }
         Calendar time = mDataset.get(position).getDate();
         SimpleDateFormat df;

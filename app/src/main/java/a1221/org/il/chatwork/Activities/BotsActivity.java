@@ -48,9 +48,23 @@ public class BotsActivity extends AppCompatActivity {
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
         byte[] bitmapdata2 = stream.toByteArray();
 
+        d = getDrawable(R.drawable.cnc);
+        bitmap = ((BitmapDrawable)d).getBitmap();
+        stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] bitmapdata3 = stream.toByteArray();
+
+        d = getDrawable(R.drawable.cnc);
+        bitmap = ((BitmapDrawable)d).getBitmap();
+        stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] bitmapdata4 = stream.toByteArray();
+
         Bot[] bots = new Bot[]{
                   new Bot(1,"Waiter Bot","Hey! This is a test message. I'm just making this longer now", Calendar.getInstance(),bitmapdata)
-                , new Bot(2,"CNC Bot","Hey! This is a test message. I'm just making this longer now", Calendar.getInstance(),bitmapdata2)
+                , new Bot(2,"CNC Bot","Hi! This is a test message. I'm just making this longer now", Calendar.getInstance(),bitmapdata2)
+                , new Bot(2,"Lions Tamer Bot","Hello world! This is a test message. I'm just making this...", Calendar.getInstance(),bitmapdata3)
+                , new Bot(2,"Kryptonite Bot","Test test test! This is a test message. I'm just making...", Calendar.getInstance(),bitmapdata4)
         };
         mRecyclerView.setAdapter(new BotListAdapter(bots, new View.OnClickListener() {
             @Override
