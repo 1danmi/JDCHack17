@@ -6,6 +6,26 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowEnterTransition">@android:transition/slide_right</item>
+        <item name="android:windowExitTransition">@android:transition/slide_left</item>
+
+    </style>
+
+    <style name="TextPrimary">
+        <item name="android:textColor">@color/theme_light_text_primary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextSecondary">
+        <item name="android:textColor">@color/theme_light_text_primary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextTertiary">
+        <item name="android:textColor">@color/theme_light_text_secondary</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <!-- Dark Buttons -->

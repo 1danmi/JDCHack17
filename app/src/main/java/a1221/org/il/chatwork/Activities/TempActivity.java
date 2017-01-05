@@ -1,7 +1,9 @@
-package a1221.org.il.chatwork;
+package a1221.org.il.chatwork.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import a1221.org.il.chatwork.R;
 
 public class TempActivity extends AppCompatActivity {
 
