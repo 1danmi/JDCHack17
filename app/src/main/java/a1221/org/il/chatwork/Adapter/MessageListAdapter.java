@@ -27,7 +27,7 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
     private List<Message> mDataset;
     public Bitmap botBmp = null;
     public Bitmap userBmp = null;
-    public final static int MSG_OUT =1;
+    public final static int MSG_OUT =0;
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
@@ -82,12 +82,13 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
         else
             df = new SimpleDateFormat("HH:mm:ss");
         holder.date.setText(df.format(time.getTime()));
-        if(mDataset.get(position).isUserSender()) {
-            botBmp = RoundBitmap.getRoundedCornerBitmap(userBmp, userBmp.getWidth() / 2);
+        Bitmap bmp=null;
+        if(!mDataset.get(position).isUserSender()) {
+            bmp = RoundBitmap.getRoundedCornerBitmap(userBmp, userBmp.getWidth() / 2);
         }
         else
-            botBmp = RoundBitmap.getRoundedCornerBitmap(botBmp, botBmp.getWidth()/2);
-        holder.img.setImageBitmap(botBmp);
+            bmp = RoundBitmap.getRoundedCornerBitmap(botBmp, botBmp.getWidth()/2);
+        holder.img.setImageBitmap(bmp);
     }
 
     @Override
