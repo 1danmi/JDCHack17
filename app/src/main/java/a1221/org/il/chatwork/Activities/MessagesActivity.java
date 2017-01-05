@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.google.gson.JsonElement;
 
 import java.io.ByteArrayOutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -60,8 +62,9 @@ public class MessagesActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         msgs = new ArrayList<Message>();
-        mRecyclerView.setAdapter(new MessageListAdapter(msgs,bmp,
-                BitmapFactory.decodeResource(this.getResources(), R.drawable.profile)));
+        mRecyclerView.setAdapter(new MessageListAdapter(msgs,bmp
+                , BitmapFactory.decodeResource(this.getResources(), R.drawable.profile)
+                , this));
 
         ImageButton btn = (ImageButton)findViewById(R.id.add_message);
         final EditText txt = (EditText)findViewById(R.id.message_txt);
@@ -97,7 +100,8 @@ public class MessagesActivity extends AppCompatActivity {
                     @Override
                     protected void onPostExecute(AIResponse aiResponse) {
                         if (aiResponse != null) {
-                            msgs.add(new Message(7,  aiResponse.getResult().getFulfillment().getSpeech(), Calendar.getInstance(), true));
+                            String ans = aiResponse.getResult().getFulfillment().getSpeech();
+                            msgs.add(new Message(7, ans , Calendar.getInstance(), true));
                             mRecyclerView.getAdapter().notifyDataSetChanged();
                             mRecyclerView.scrollToPosition(mRecyclerView.getAdapter().getItemCount() - 1);
                         }

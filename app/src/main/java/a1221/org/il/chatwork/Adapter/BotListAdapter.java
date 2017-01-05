@@ -70,7 +70,7 @@ public class BotListAdapter extends RecyclerView.Adapter<BotListAdapter.BotViewH
         holder.header.setText(mDataset[position].getHeader());
         Calendar time = mDataset[position].getLastDate();
         SimpleDateFormat df;
-        if (Calendar.getInstance().get(Calendar.DATE) == time.get(Calendar.DATE))
+        if (Calendar.getInstance().get(Calendar.DATE) != time.get(Calendar.DATE))
             df = new SimpleDateFormat("yyyy MMMM d", Locale.ENGLISH);
         else
             df = new SimpleDateFormat("HH:mm");
