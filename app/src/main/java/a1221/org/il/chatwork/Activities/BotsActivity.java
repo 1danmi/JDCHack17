@@ -62,4 +62,9 @@ public class BotsActivity extends AppCompatActivity {
             }
         }));
     }
+
+    @Override
+    public void onBackPressed() {
+
+    }
 }

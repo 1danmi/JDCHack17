@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="a1221.org.il.chatwork.Activities.MessagesActivity"
-    android:background="#FAFAFA">
+    android:background="@color/grey_200">
     <android.support.v7.widget.RecyclerView
         android:id="@+id/messages_list"
         android:layout_width="match_parent"
