@@ -8,5 +8,6 @@ public class Constansts {
 
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
+    public static Boolean DARK_MODE = true;
 
 }

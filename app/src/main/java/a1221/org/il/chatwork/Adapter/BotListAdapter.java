@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -16,8 +15,10 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import a1221.org.il.chatwork.Entities.Bot;
-import a1221.org.il.chatwork.R;
 import a1221.org.il.chatwork.Libraries.RoundBitmap;
+import a1221.org.il.chatwork.R;
+
+import static a1221.org.il.chatwork.constants.Constansts.DARK_MODE;
 
 /**
  * Created by nadav on 1/4/2017.
@@ -57,8 +58,14 @@ public class BotListAdapter extends RecyclerView.Adapter<BotListAdapter.BotViewH
     @Override
     public BotViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.bot_list_item, parent, false);
+        View v;
+        if(DARK_MODE) {
+            v = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.bot_list_item_dark, parent, false);
+        }else{
+            v = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.bot_list_item, parent, false);
+        }
         // set the view's size, margins, paddings and layout parameters
         BotViewHolder vh = new BotViewHolder(v);
         return vh;

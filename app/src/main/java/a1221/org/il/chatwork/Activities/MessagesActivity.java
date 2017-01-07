@@ -2,23 +2,17 @@ package a1221.org.il.chatwork.Activities;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
-import com.google.gson.JsonElement;
-
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Map;
 
 import a1221.org.il.chatwork.Adapter.MessageListAdapter;
 import a1221.org.il.chatwork.Entities.Message;
@@ -26,25 +20,31 @@ import a1221.org.il.chatwork.R;
 import ai.api.AIConfiguration;
 import ai.api.AIDataService;
 import ai.api.AIServiceException;
-import ai.api.android.AIService;
 import ai.api.model.AIRequest;
 import ai.api.model.AIResponse;
-import ai.api.model.Result;
+
+import static a1221.org.il.chatwork.constants.Constansts.DARK_MODE;
 
 public class MessagesActivity extends AppCompatActivity {
 
     private String CONNECTION_KEY = null;
     private LinearLayoutManager mLayoutManager;
-    private RecyclerView mRecyclerView;
+    private RecyclerView mRecyclerView  ;
     private List<Message> msgs;
     private  Bitmap bmp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_message);
+        if(DARK_MODE) {
+            setContentView(R.layout.activity_message_dark);
+        }else{
+            setContentView(R.layout.activity_message);
+        }
+
 
         String name = getIntent().getStringExtra("Name");
+        setTitle(name);
         if(name.equals("Waiter Bot")) {
             CONNECTION_KEY = "c31bca71763f4df0b1641a2ae72f99d0";
             bmp = BitmapFactory.decodeResource(this.getResources(), R.drawable.waiter);

@@ -1,7 +1,6 @@
 package a1221.org.il.chatwork.Adapter;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +16,8 @@ import java.util.Locale;
 import a1221.org.il.chatwork.Entities.Message;
 import a1221.org.il.chatwork.Libraries.RoundBitmap;
 import a1221.org.il.chatwork.R;
+
+import static a1221.org.il.chatwork.constants.Constansts.DARK_MODE;
 
 /**
  * Created by nadav on 1/4/2017.
@@ -61,12 +62,21 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
     public MessageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         View v;
-        if(viewType == MSG_OUT)
-            v = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.list_item_message_out, parent, false);
-        else
-            v = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.list_item_message_in, parent, false);
+        if(DARK_MODE) {
+            if (viewType == MSG_OUT)
+                v = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.list_item_message_out_dark, parent, false);
+            else
+                v = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.list_item_message_in_dark, parent, false);
+        }else{
+            if (viewType == MSG_OUT)
+                v = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.list_item_message_out, parent, false);
+            else
+                v = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.list_item_message_in, parent, false);
+        }
         // set the view's size, margins, paddings and layout parameters
         MessageViewHolder vh = new MessageViewHolder(v);
         return vh;
